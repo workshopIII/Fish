@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Display Group</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv='Content-Type' content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<!-- Bootstrap Core CSS -->
+<link href="{{ url_for ('static', filename='bootstrap.css')}}" rel='stylesheet' type='text/css' />
+
+<!-- Custom CSS -->
+<link href="{{ url_for ('static', filename='style.css')}}" rel='stylesheet' type='text/css' />
+
+<!-- font-awesome icons CSS -->
+<link href="{{ url_for ('static', filename='font-awesome.css')}}" rel="stylesheet"> 
+<!-- //font-awesome icons CSS -->
+
+ <!-- side nav css file -->
+ <link href="{{ url_for ('static', filename='SidebarNav.min.css')}}" media='all' rel='stylesheet' type='text/css'/>
+ <!-- side nav css file -->
+ 
+ <!-- js-->
+<script src="{{ url_for ('static', filename='jquery-1.11.1.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='modernizr.custom.js')}}"></script>
+
+<!--webfonts-->
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+<!--//webfonts--> 
+
+<!-- Metis Menu -->
+<script src="{{ url_for ('static', filename='metisMenu.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='custom.js')}}"></script>
+<link href="{{ url_for ('static', filename='custom.css')}}" rel="stylesheet">
+<!--//Metis Menu -->
+
+</head> 
+<body class="cbp-spmenu-push">
+	<form action="" method="post">
+	<div class="main-content">
+	<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+				<!--left-fixed -navigation-->
+		<!--left-fixed -navigation-->
+		<aside class="sidebar-left">
+      <nav class="navbar navbar-inverse">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <h1><a class="navbar-brand" href="student.html"><span class="fa fa-area-chart"></span> Grading System<span class="dashboard_text">Member Page</span></a></h1>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="sidebar-menu">
+              <li class="header">MAIN NAVIGATION</li>
+			  <li class="treeview">
+                <a href="{{url_for('leader.selectmem')}}">
+                <i class="fa fa-dashboard"></i> <span>Choose Friend</span>
+                </a>
+              </li>
+			  <li class="treeview">
+                <a href="{{url_for('member.voteleader')}}">
+                <i class="fa fa-laptop"></i> <span>Vote Leader</span>
+                </a>
+			  </li>
+			  <li class="treeview">
+                <a href="{{url_for('leader.setContribution')}}">
+                <i class="fa fa-dashboard"></i> <span>Evaluate Member</span>
+                </a>
+			  </li>
+			  <li class="treeview">
+                <a href="{{url_for('member.eleader')}}">
+                <i class="fa fa-dashboard"></i> <span>Evaluate Leader</span>
+                </a>
+              </li>
+              <li class="treeview">
+                <a href="{{url_for('user.setPassword')}}">
+                <i class="fa fa-pie-chart"></i><span>Change Password</span>
+                <span>Update</span>
+                </a>
+              </li>
+              
+          </div>
+          <!-- /.navbar-collapse -->
+      </nav>
+    </aside>
+	</div>
+		<!--left-fixed -navigation-->
+		
+		<!-- header-starts -->
+		<div class="sticky-header header-section ">
+			<div class="header-left">
+				<button id="showLeftPush"><i class="fa fa-bars"></i></button>
+			</div>
+			<div class="header-right">			
+				<div class="profile_details">		
+					<ul>
+						<li class="dropdown profile_details_drop">							
+							<div class="profile_img">	
+								<span class="prfil-img"></span> 
+								<div class="user-name">
+									<p>Admin Name</p>
+									<span>User</span>
+								</div>
+								<div class="clearfix"></div>	
+							</div>								
+							<ul class="dropdown-menu drp-mnu"></ul>
+						</li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>				
+			</div>
+			<div class="clearfix"> </div>	
+		</div>
+		<!-- //header-ends -->
+				
+		<!-- main content start-->
+		<div id="page-wrapper">
+			<div class="main-page">
+				<h3 class="title1">Diplay division result</h3>
+				
+				<!-- scoring rate table start-->
+				<div class=" form-grids row form-grids-right">
+					<div class="widget-shadow " data-example-id="basic-forms"> 
+					<!--<form accept-charset="UTF-8" role="form" action="#" method="post">
+                    <fieldset>-->
+						<div class="form-title">
+							<h4>Division result:</h4>
+						</div>
+					<div class="form-body">
+
+					<div class="divb">
+				      <form role="form" action="" method="post">
+				        <div class="form-group"> 
+						
+								<div class="col-sm-12">
+									<table class="table table-bordered">
+									<tr>
+										<th>CourseId</th>
+										<th>Team number</th>
+										<th>studentID</th>
+									</tr>
+										{% for i in result %}
+											<tr>
+												<td>{{ i[0] }}</td>
+												<td>{{ i[1] }}</td>
+												<td>{{ i[2] }}</td>
+											</tr>
+										 {% endfor %}
+										 </table>
+									</div> 
+								</div>
+						</form>
+						
+						<a href="{{url_for('student.main_page')}}">
+					<button type="button" class="btn btn-default">back</button> 
+						</a>
+					</div>
+					</div>
+				</div>
+				
+				<!-- scoring rate table end-->				
+				
+				<!-- Update start-->
+				<div class=" form-grids row form-grids-right">
+					
+					</div>
+				</div>
+				<!-- Update end-->
+			</div>
+		</div>
+		<!--footer-->
+		<div class="footer">
+		   <p>Copyright &copy; 2018.Company name All rights reserved.More Templates 1002G4</P>
+	   </div>
+        <!--//footer-->
+	</div>
+	
+	<!-- side nav js -->
+	<script src='js/SidebarNav.min.js' type='text/javascript'></script>
+	<script>
+      $('.sidebar-menu').SidebarNav()
+    </script>
+	<!-- //side nav js -->
+	
+	<!-- Classie --><!-- for toggle left push menu script -->
+		<script src="js/classie.js"></script>
+		<script>
+			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+				showLeftPush = document.getElementById( 'showLeftPush' ),
+				body = document.body;
+				
+			showLeftPush.onclick = function() {
+				classie.toggle( this, 'active' );
+				classie.toggle( body, 'cbp-spmenu-push-toright' );
+				classie.toggle( menuLeft, 'cbp-spmenu-open' );
+				disableOther( 'showLeftPush' );
+			};
+			
+			function disableOther( button ) {
+				if( button !== 'showLeftPush' ) {
+					classie.toggle( showLeftPush, 'disabled' );
+				}
+			}
+		</script>
+	<!-- //Classie --><!-- //for toggle left push menu script -->
+	
+	<!--scrolling js-->
+	<script src="js/jquery.nicescroll.js"></script>
+	<script src="js/scripts.js"></script>
+	<!--//scrolling js-->
+	
+	<!-- Bootstrap Core JavaScript -->
+   <script src="js/bootstrap.js"> </script>
+   
+</body>
+</html>

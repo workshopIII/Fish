@@ -1,0 +1,22 @@
+<html>
+   <body>
+   
+      <form action = "http://localhost:5000/files/importf" method = "POST" 
+         enctype = "multipart/form-data">
+		 <select name="option" id="product_name" required>
+								{% for i in result %}
+											<option>{{ i }}</option>
+								{% endfor %}   
+								</select>
+         <input type = "file" name = "file" />
+		 <div class="row">
+							  <div class="col">
+								  <!-- Message shows here -->
+								  <strong>{{ message }}</strong>
+							  </div>
+						  </div>
+         <input type = "submit"/>
+      </form>
+      
+   </body>
+</html>

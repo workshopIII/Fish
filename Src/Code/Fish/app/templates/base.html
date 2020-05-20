@@ -1,0 +1,116 @@
+
+
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>{% block title %}{% endblock %} </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv='Content-Type' content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<!-- Bootstrap Core CSS -->
+<link href="static/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="{{  url_for("static", filename="bootstrap.css")}}">
+    <link rel="stylesheet" href="{{  url_for("static", filename="style.css")}}">
+    <link rel="stylesheet" href="{{  url_for("static", filename="font-awesome.css")}}">
+    <link rel="stylesheet" href="{{  url_for("static", filename="SidebarNav.min.css")}}">
+
+
+ <!-- side nav css file -->
+
+
+
+<!--webfonts-->
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+<!--//webfonts-->
+
+    <link rel="stylesheet" href="{{  url_for("static", filename="custom.css")}}">
+
+
+    {% block header %}{% endblock %}
+
+
+</head>
+<body class="cbp-spmenu-push">
+	<div class="main-content">
+	<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+				<!--left-fixed -navigation-->
+		<!--left-fixed -navigation-->
+		<aside class="sidebar-left">
+      <nav class="navbar navbar-inverse">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <h1><a class="navbar-brand" href="teacher.html"><span class="fa fa-area-chart"></span> Grading System<span class="dashboard_text">Member Page</span></a></h1>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="sidebar-menu">
+              <li class="header">MAIN NAVIGATION</li>
+              <li class="treeview">
+                <a href="">
+                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                </a>
+              </li>
+			  </ul>
+
+          </div>
+          <!-- /.navbar-collapse -->
+      </nav>
+    </aside>
+	</div>
+		<!--left-fixed -navigation-->
+
+		<!-- header-starts -->
+		<div class="sticky-header header-section ">
+			<div class="header-left">
+				<button id="showLeftPush"><i class="fa fa-bars"></i></button>
+			</div>
+			<div class="header-right">
+				<div class="profile_details">
+					<ul>
+						<li class="dropdown profile_details_drop">
+							<div class="profile_img">
+								<span class="prfil-img"></span>
+								<div class="user-name">
+									<p>Admin Name</p>
+									<span>{{ name }}</span>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<ul class="dropdown-menu drp-mnu"></ul>
+						</li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<!-- //header-ends -->
+
+		<!-- main content start-->
+
+          {% block content %}{% endblock %}
+
+		</div>
+		<!--footer-->
+		<div class="footer">
+		   <p>Copyright &copy; 2018.Company name All rights reserved.More Templates 1002G4</P>
+	   </div>
+        <!--//footer-->
+	</div>
+
+	<!-- side nav js -->
+
+	<!-- //side nav js -->
+
+
+
+</body>
+</html>

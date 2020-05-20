@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    import class
+
+{% endblock %}
+
+{% block content %}
+				
+		<!-- main content start-->
+		<div id="page-wrapper">
+			<div class="main-page">
+				<h3 class="title1">Select File</h3>
+				
+				<!-- scoring rate table start-->
+				<div class=" form-grids row form-grids-right">
+					<div class="widget-shadow " data-example-id="basic-forms"> 
+					<!--<form accept-charset="UTF-8" role="form" action="#" method="post">
+                    <fieldset>-->
+						<div class="form-title">
+							<h4>Choose Class File :</h4>
+						</div>
+					<div class="form-body">
+						
+					<div class="divb">
+				      <form action="http://localhost:5000/files/importf" method="post" enctype="multipart/form-data">
+				        <div class="form-group">
+				          <div class="form-group">
+							<label for="exampleInputTitle">Course Name: </label>
+							<select name="option" id="product_name" required>
+								{% for i in result %}
+											<option>{{ i }}</option>
+								{% endfor %}   
+								</select>        
+						</div>
+  
+						  <div class="row">
+							  <div class="col">
+								  <!-- Message shows here -->
+								  <strong>{{ message }}</strong>
+							  </div>
+						  </div>
+						  
+							<input type="file" name="file"/><br>
+						  
+						  <button type="submit" class="btn btn-default">Submit</button>
+						  </div>
+						</form>
+
+					<a href="{{url_for('teacher.import_choice')}}">
+						<button type="button" class="btn btn-default">Back</button> 
+					</a>
+					
+					</div>
+				<!--</fieldset>
+                -->
+					</div>
+				</div>
+				
+				<!-- scoring rate table end-->				
+				
+				<!-- Update start-->
+				<div class=" form-grids row form-grids-right">
+					
+					</div>
+				</div>
+				<!-- Update end-->
+			</div>
+		</div>
+		{% endblock %}
